@@ -4,6 +4,9 @@
   --light-gold-rgb: 249 181 51;
   --dark-gold-rgb: 215 147 23;
 
+  --light-purple-rgb: 243, 0, 243;
+  --dark-purple-rgb: 133, 0, 133;
+
   --primary-stripe-rgb: 230 230 230;
   --secondary-stripe-rgb: 240 240 240;
 }
@@ -36,8 +39,8 @@ body {
 
 #star-container {
   background: radial-gradient(
-    rgb(var(--light-gold-rgb)),
-    rgb(var(--dark-gold-rgb))
+    rgb(var(--light-purple-rgb)),
+    rgb(var(--dark-purple-rgb))
   );
   height: 100%;
   overflow: hidden;
@@ -64,7 +67,7 @@ body {
   background: radial-gradient(
     circle,
     transparent 75%,
-    rgb(var(--dark-gold-rgb))
+    rgb(var(--dark-purple-rgb))
   );
   position: absolute;
   left: 0px;
@@ -510,7 +513,6 @@ body {
 .stat_container {
   width: 90%;
   max-width: 450px;
-  /* background-color: #e6d596; */
   background-color: #e4e4e4;
   margin: 15px auto 0; /* auto 0 centers it horizontally */
   padding: 25px 5px;
