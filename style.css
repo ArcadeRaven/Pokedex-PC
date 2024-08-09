@@ -531,6 +531,7 @@ body {
   background-color: #e4e4e4;
   margin: 15px auto 0; /* auto 0 centers it horizontally */
   padding: 25px 5px;
+  border-radius: 20px; /* round the corners */
   text-align: center;
   float: right;
 }
