@@ -474,14 +474,15 @@ body {
   outline: 0;
   background: #e6d596;
   border-radius: 50%; /* circle */
-  max-width: 100%;
+  width: 100%;
+  max-width: 54px;
   height: auto;
   cursor: pointer;
 }
 
 .search button img {
   width: 100%;
-  max-width: 48px;
+  max-width: 52px;
   height: auto;
 }
 
