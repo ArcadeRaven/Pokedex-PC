@@ -1,3 +1,6 @@
+/* TODO: Pick a better font */
+/* TODO: Add SVGs of types as well */
+
 :root {
   --glow-rgb: 245 245 245;
 
@@ -547,6 +550,16 @@ body {
   max-width: 150px;
   height: auto;
   image-rendering: pixelated;
+}
+
+.type1 {
+  display: inline;
+  float: left;
+}
+
+.type2 {
+  display: inline;
+  float: left;
 }
 
 .pokemon h1 {
