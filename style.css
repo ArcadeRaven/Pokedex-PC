@@ -424,6 +424,16 @@ body {
   background-color: #2c2929;
 }
 
+@font-face {
+  font-family: pokeFont;
+  src: url(fonts/GB.ttf);
+}
+
+@font-face {
+  font-family: inter;
+  src: url(fonts/Inter.ttf);
+}
+
 .card {
   width: 90%;
   max-width: 1000px;
@@ -447,7 +457,9 @@ body {
   border: 0;
   outline: 0;
   background: #e6d596;
-  color: #555;
+  /* color: #555; */
+  font-family: pokeFont;
+  color: black;
   padding: 10px 15px;
   height: 60px;
   border-radius: 30px; /* makes it pretty and round */
@@ -477,7 +489,8 @@ body {
   width: 90%;
   max-width: 200px;
   background-color: rgba(0, 0, 0, 0);
-  color: #555;
+  color: black;
+  font-family: inter;
   margin: 25px auto 0; /* auto 0 centers it horizontally */
   border-radius: 20px; /* round the corners */
   padding: 10px 20px;
@@ -494,6 +507,7 @@ body {
   width: 80%;
   max-width: 200px;
   background-color: orange;
+  font-family: inter;
   color: white;
   float: right;
   margin-top: 20px;
@@ -504,6 +518,7 @@ body {
   width: 80%;
   max-width: 200px;
   background-color: black;
+  font-family: inter;
   color: white;
   float: right;
   margin-top: 20px;
@@ -535,6 +550,7 @@ body {
 }
 
 .pokemon h1 {
+  font-family: inter;
   font-size: 25px;
   font-weight: 500;
   color: var(--h1-name);
@@ -566,32 +582,38 @@ body {
 }
 
 #aLink {
+  font-family: inter;
   font-size: 16px;
   color: #403b80;
 }
 
 #aLink:hover {
+  font-family: inter;
   font-size: 16px;
   color: #cc322a;
 }
 
 #haLink {
+  font-family: inter;
   font-size: 16px;
   color: #403b80;
 }
 
 #haLink:hover {
+  font-family: inter;
   font-size: 16px;
   color: #cc322a;
 }
 
 p {
+  font-family: inter;
   font-size: 16px;
   /* color: #08720c; */
   color: black;
 }
 
 h2 {
+  font-family: inter;
   color: #180dac;
   font-size: 20px;
 }
