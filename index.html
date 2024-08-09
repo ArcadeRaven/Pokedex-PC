@@ -156,8 +156,8 @@ async function getPokemon(pokemonName) {
     if (data.types[1]?.type?.name)
     {
       document.getElementById("t2Img").setAttribute("style", "display:block") // clears the display none from the below else statement before the search to correctly apply the icon to the type 2 image.
-      type2 = type2.toLowerCase();
-      document.getElementById("t2Img").src=`images/icons/${type2}.svg`;
+      type2L = type2.toLowerCase();
+      document.getElementById("t2Img").src=`images/icons/${type2L}.svg`;
     }
       
     else
