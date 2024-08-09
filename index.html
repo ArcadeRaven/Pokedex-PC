@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PokeDex</title>
+    <title>Mario_Dex</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="script" href="script.js" />
   </head>
@@ -53,9 +53,14 @@
                       <div class="stat_container">
                           <div class="details_row1">
                             <div>
-                              <h2>Type</h2>
+                              <h2>Type 1</h2>
                               <p class="type1">Ghost</p>
+                              <img src="images/icons/bug.svg" id="t1Img" height="20px" width="20px">
+                            </div>
+                            <div>
+                              <h2>Type 2</h2>
                               <p class="type2">Poison</p>
+                              <img src="images/icons/bug.svg" id="t2Img" height="20px" width="20px" alt="">
                             </div>
                   
                             <div>
@@ -83,28 +88,7 @@
                               <a href="#" id="haLink">Description</a>
                             </div>
                           </div>
-              
-                          <!-- REPLACE stats with species.url.flavor_text-->
 
-                          <!-- 
-                          <div class="details_row3">
-                              <div>
-                                <h2>HP</h2>
-                                <p class="hp">HP</p>
-                                <h2>ATK</h2>
-                                <p class="atk">ATK</p>
-                                <h2>DEF</h2>
-                                <p class="def">DEF</p>
-                              </div>
-                              <div>
-                                <h2>SPD</h2>
-                                <p class="spd">SPEED</p>
-                                <h2>SPATK</h2>
-                                <p class="spAtk">SPATK</p>
-                                <h2>SPDEF</h2>
-                                <p class="spDef">SPDEF</p>
-                              </div>
-                          </div> -->
                           <div class="details_row3">
                             <!-- <h2>Description</h2> -->
                             <p class="desc">Desc</p>
@@ -159,7 +143,7 @@ async function getPokemon(pokemonName) {
 
     document.querySelector(".number").innerHTML = "No. " + number;
     document.querySelector(".name").innerHTML = nameUpper;
-    document.querySelector(".type1").innerHTML = type1Upper;
+    document.querySelector(".type1").innerHTML = type1Upper + " ";
     document.querySelector(".height").innerHTML = data.height / 10 + " m";
     document.querySelector(".weight").innerHTML = data.weight / 10 + " kg";
     document.querySelector(".ability").innerHTML = abilityUpper;
@@ -168,13 +152,28 @@ async function getPokemon(pokemonName) {
     var type2 = data.types[1]?.type?.name; // checks to see if the type is defined, return the type if true, return undefined if false
     if (data.types[1]?.type?.name)
       var type2 = type2[0].toUpperCase() + type2.slice(1);
-    document.querySelector(".type2").innerHTML = type2;
+
+    if (data.types[1]?.type?.name)
+    {
+      document.getElementById("t2Img").setAttribute("style", "display:block") // clears the display none from the below else statement before the search to correctly apply the icon to the type 2 image.
+      document.getElementById("t2Img").src=`images/icons/${type2}.svg`;
+    }
+      
+    else
+      document.getElementById("t2Img").setAttribute("style", "display:none"); // hides the image if the type is undefined.
+
+    document.querySelector(".type2").innerHTML = type2 + " ";
+
 
     var hiddenAbility = data.abilities[1]?.ability?.name;
     if (data.abilities[1]?.ability?.name)
       var hiddenAbility =
         hiddenAbility[0].toUpperCase() + hiddenAbility.slice(1);
     document.querySelector(".hiddenAbility").innerHTML = hiddenAbility;
+
+    // change icons based on name
+    document.getElementById("t1Img").src=`images/icons/${type1}.svg`;
+
 
     // hyper link abilities using https://pokemondb.net/ability/${ability}. That way someone can see what the ability does.
     var abilityUrl = document.getElementById("aLink");
@@ -184,28 +183,7 @@ async function getPokemon(pokemonName) {
     abilityUrl.setAttribute(
       "href",
       `https://pokemondb.net/ability/${hiddenAbility}`
-    );
-
-    // base stats
-    
-    // entry = data.species.url."flavor_text_entries".flavor_text;
-    
-    /* 
-    hp = data.stats[0].base_stat;
-    atk = data.stats[1].base_stat;
-    def = data.stats[2].base_stat;
-    spAtk = data.stats[3].base_stat;
-    spDef = data.stats[4].base_stat;
-    spd = data.stats[5].base_stat;
-
-    document.querySelector(".hp").innerHTML = hp;
-    document.querySelector(".atk").innerHTML = atk;
-    document.querySelector(".def").innerHTML = def;
-    document.querySelector(".spAtk").innerHTML = spAtk;
-    document.querySelector(".spDef").innerHTML = spDef;
-    document.querySelector(".spd").innerHTML = spd;
-    */
-    
+    );    
 
     document.querySelector(".pokemon").style.display = "block";
     document.querySelector(".error").style.display = "none";
